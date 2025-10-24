@@ -10,7 +10,11 @@ export const useSettingsStore = defineStore('settings', () => {
   watch(
     settings,
     new_settings => {
+<<<<<<< HEAD
       insertOrAssignVariables(toRaw(new_settings), { type: 'script', script_id: getScriptId() });
+=======
+      insertOrAssignVariables(klona(new_settings), { type: 'script', script_id: getScriptId() });
+>>>>>>> 5b620b02062ce110cd5bc721807d48ca3f2bd2cf
     },
     { immediate: true, deep: true },
   );
@@ -31,3 +35,7 @@ function parsePrettified<T>(schema: z.ZodType<T>, data: unknown): T {
   }
   return result.data;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b620b02062ce110cd5bc721807d48ca3f2bd2cf
