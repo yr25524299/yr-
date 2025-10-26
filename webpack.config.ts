@@ -110,7 +110,11 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
     experiments: {
       outputModule: true,
     },
+<<<<<<< HEAD
     devtool: argv.mode === 'production' ? false : 'eval-source-map',
+=======
+    devtool: argv.mode === 'production' ? 'source-map' : 'eval-source-map',
+>>>>>>> 03f5236cf58c29734b71f6f61b5144d941ee714d
     watchOptions: {
       ignored: ['**/dist', '**/node_modules'],
     },
@@ -351,14 +355,24 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
             'pinia',
             '@vueuse/core',
             { from: 'dedent', imports: [['default', 'dedent']] },
+<<<<<<< HEAD
+=======
+            { from: 'klona', imports: ['klona'] },
+            { from: 'vue-final-modal', imports: ['useModal'] },
+>>>>>>> 03f5236cf58c29734b71f6f61b5144d941ee714d
             { from: 'zod', imports: ['z'] },
           ],
         }),
         unpluginVueComponents({
           dts: true,
           syncMode: 'overwrite',
+<<<<<<< HEAD
           resolvers: [VueUseComponentsResolver(), VueUseDirectiveResolver()],
           // globs: ['src/panel/component/*.vue'],
+=======
+          // globs: ['src/panel/component/*.vue'],
+          resolvers: [VueUseComponentsResolver(), VueUseDirectiveResolver()],
+>>>>>>> 03f5236cf58c29734b71f6f61b5144d941ee714d
         }),
         new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
         new webpack.DefinePlugin({
@@ -445,6 +459,10 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       const global = {
         jquery: '$',
         lodash: '_',
+<<<<<<< HEAD
+=======
+        showdown: 'showdown',
+>>>>>>> 03f5236cf58c29734b71f6f61b5144d941ee714d
         toastr: 'toastr',
         vue: 'Vue',
         'vue-router': 'VueRouter',
